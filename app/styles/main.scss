@@ -85,7 +85,7 @@ ol {
       padding:$spacing;
       height:$spacing * 5;
       background:#fff;
-      //box-shadow:0 0 2px 1px rgba(#000, .03);
+      box-shadow:0 0 2px 1px rgba(#000, .03);
     }
     h1 {
       margin:0 ($spacing + $header-close) $flow 0;
@@ -155,12 +155,12 @@ ol {
     padding:$spacing 0;
     padding-left:$product-img-size + $spacing;
     padding-bottom:$spacing * 3;
-    min-height:$product-img-size + (2 * $spacing);
+    min-height:($product-img-size * 2) + (2 * $spacing);
     @media only screen and (min-width: 64.063em) {
       padding:$spacing--desktop 0;
       padding-left:$product-img-size--desktop + $spacing--desktop;
       padding-bottom:$spacing--desktop * 2;
-      min-height:$product-img-size--desktop + (2 * $spacing--desktop);
+      min-height:($product-img-size--desktop * 2);
     }
   }
     // product avatar
@@ -180,7 +180,7 @@ ol {
     .product__share   {
       position:absolute;
       top:$product-img-size + $spacing; left:0;
-      padding:$flow;
+      margin-bottom:$spacing; padding:$flow;
       width:$product-img-size;
       background:$light-grey;
       font:{size:11px;}
