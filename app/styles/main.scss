@@ -1,0 +1,301 @@
+// bower:scss
+// endbower
+
+
+// overall variables
+$primary: #4ab9a6;
+$blue: #49b3e9;
+$light-grey: #dedede;
+$dark-grey: #333;
+
+$flow: 5px;
+$spacing: 15px;
+
+$header-close: $spacing * 2;
+$product-img-size: 60px + $spacing;
+
+  // desktop
+  $spacing--desktop: $spacing * 2;
+  $header-close--desktop:$spacing--desktop * 2;
+  $product-img-size--desktop: $product-img-size + $spacing--desktop;
+
+// reset headings
+@for $i from 1 through 6 {
+  h#{$i} {
+    margin:0; padding:0;
+    font:{weight:400;}
+  }
+}
+
+
+// html + body
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing:antialiased;
+}
+
+body {
+  font:{family:sans-serif; weight:400;}
+  color:#000;
+  @media only screen and (min-width: 64.063em) {
+    background:#f9f9f9;
+  }
+}
+
+// paragraphs
+p  {
+  margin:0; padding:0;
+}
+
+// links
+a {
+  text:{decoration:none;}
+}
+
+// reset lists 
+ul,
+ol {
+  margin:0; padding:0;
+  list-style:none;
+}
+
+// modal container
+.container {
+  margin:0 auto; padding:0 15px;
+  max-width:660px;
+  @media only screen and (min-width: 64.063em) {
+    padding-top:$spacing--desktop * 3;
+  }
+}
+
+  // modal header
+  .header {
+    position:relative;
+    border-bottom:1px $light-grey solid;
+    padding:$spacing 0;
+    @media only screen and (min-width: 64.063em) {
+      position:fixed;
+      top:0; right:0; left:0;
+      z-index:2;
+      //border:0;
+      padding:$spacing;
+      height:$spacing * 5;
+      background:#fff;
+      //box-shadow:0 0 2px 1px rgba(#000, .03);
+    }
+    h1 {
+      margin:0 ($spacing + $header-close) $flow 0;
+      font:{size:20px; weight:400;}
+      @media only screen and (min-width: 64.063em) {
+        margin:0 ($spacing--desktop + $header-close--desktop) $flow 0;
+        font:{size:19px;}
+      }
+    }
+  } 
+    // shop details  
+    .shop-details {
+      padding-bottom:$spacing;
+      font:{size:15px;}
+      color:$dark-grey;
+      @media only screen and (min-width: 64.063em) {
+        padding-bottom:0;
+      }
+      li  {
+        float:left;
+        margin-right:$flow;
+        @media only screen and (min-width: 64.063em) {
+          margin-right:$flow * 2;
+        }
+      }
+      a   {
+        text:{decoration:underline;}
+        color:#aaa;
+        &:hover   {
+          color:#000;
+        }
+      }
+    }
+    // close modal
+    .header__close {
+      display:block;
+      position:absolute;
+      top:$spacing; right:0;
+      width:$header-close; height:$header-close;
+      //background:#000;
+      font:{size:$header-close * 1.5;}
+      text:{align:center;}
+      color:#aaa;
+      cursor:pointer;
+      @media only screen and (min-width: 64.063em) {
+        
+        width:$header-close--desktop; height:$header-close--desktop;
+      }
+      &:before {
+        display:block;
+        margin:-15px 0 0 -2px;
+        content:"\00d7";
+      }
+      &:hover {
+        color:#000;
+      }
+    }
+
+// products overview
+.products {
+
+}
+  // single product
+  .product {
+    position:relative;
+    border-bottom:1px $light-grey solid;
+    padding:$spacing 0;
+    padding-left:$product-img-size + $spacing;
+    padding-bottom:$spacing * 3;
+    min-height:$product-img-size + (2 * $spacing);
+    @media only screen and (min-width: 64.063em) {
+      padding:$spacing--desktop 0;
+      padding-left:$product-img-size--desktop + $spacing--desktop;
+      padding-bottom:$spacing--desktop * 2;
+      min-height:$product-img-size--desktop + (2 * $spacing--desktop);
+    }
+  }
+    // product avatar
+    .product__img {
+      position:absolute;
+      top:$spacing; left:0;
+      border:1px $light-grey solid;
+      width:$product-img-size; height:$product-img-size;
+      background-size:cover;
+      background-position:center center;
+      @media only screen and (min-width: 64.063em) {
+        top:$spacing--desktop; left:0;
+        width:$product-img-size--desktop; height:$product-img-size--desktop;
+      }
+    }
+    // product share
+    .product__share   {
+      position:absolute;
+      top:$product-img-size + $spacing; left:0;
+      padding:$flow;
+      width:$product-img-size;
+      background:$light-grey;
+      font:{size:11px;}
+      text:{align:center;}
+      color:$dark-grey;
+      @media only screen and (min-width: 64.063em) {
+        top:$product-img-size--desktop + $spacing--desktop; 
+        width:$product-img-size--desktop;
+      }
+      i {
+        &:after {
+          display:inline-block;
+          color:#000;
+          content:'\2192';
+          transition:transform .3s ease;
+        }
+      }
+      &:hover   {
+        color:#000;
+        i:after   {
+          transform:translate3d(3px,0,0);
+        }
+      }
+    }
+    // product description
+    .product__desc {
+      margin-bottom:$flow;
+      p   {
+        padding-bottom:$flow;
+        font:{size:16px;}
+        color:$dark-grey;
+      }
+    }
+      // product title
+      .product__title a {
+        display:block;
+        margin-bottom:$flow;
+        font:{size:21px;}
+        color:#000;
+      }
+      // product brand
+      .product__brand {
+        margin-bottom:$flow;
+        font:{size:15px;}
+        text:{transform:uppercase;}
+        color:$dark-grey;
+      }
+
+    // product footer
+    .product__footer {
+      position:absolute;
+      right:0; bottom:$spacing; left:0;
+      height:$spacing * 2;
+      line-height:$spacing * 2;
+      @media only screen and (min-width: 64.063em) {
+        left:$product-img-size--desktop + $spacing--desktop;
+      }
+    }
+      // product price
+      .product__price {
+        float:left;
+        margin-bottom:$flow;
+      }
+
+      // buy product button
+      .product__btn {
+        float:right;
+        display:inline-block;
+        padding:0 $flow;
+        width:auto; height:$spacing * 2;
+        background:#000;
+        //background:$primary;
+        font:{size:11px;}
+        text:{align:center; transform:uppercase;}
+        letter-spacing:1px;
+        line-height:$spacing * 2;
+        color:#fff;
+        //border-radius:3px;
+        @media only screen and (min-width: 64.063em) {
+          padding:0 ($flow * 2);
+        }
+      }
+
+  // modal footer
+  .footer   {
+    position:relative;
+    padding:($spacing * 2) 0 ($spacing * 5);
+    @media only screen and (min-width: 64.063em) {
+      padding:($spacing--desktop * 2) 0 ($spacing--desktop * 5);
+    }
+  }
+    .cirqle-logo  {
+      float:left;
+      font:{size:17px; weight:700;}
+      color:$primary;
+      i   {
+        position:relative;
+        top:1px;
+        display:inline-block;
+        border:3px $primary solid;
+        width:$spacing; height:$spacing;
+        border-radius:100%;
+        @media only screen and (min-width: 64.063em) {
+          top:4px;
+          margin-right:5px;
+          width:($spacing * 1.5); height:($spacing * 1.5);
+        }
+      }
+    }
+    .cirqle-slogan  {
+      position:absolute;
+      top:($spacing * 2) + 1px; left:$spacing * 6;
+      color:#000;
+      @media only screen and (min-width: 64.063em) {
+        top:($spacing--desktop * 2) + ($spacing / 1.5) - 3px; // - (top spacing + height logo + border logo )
+        left:($spacing--desktop * 3) + $spacing;
+      }
+    }
