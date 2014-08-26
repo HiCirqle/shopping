@@ -305,36 +305,3 @@ ol {
         left:($spacing--desktop * 3) + $spacing;
       }
     }
-
-// black shopping experience
-.shop-black   {
-  background:rgba(#000, .96);
-  color:#fff;
-  .header   {
-    border-bottom-color:#111;
-    @media only screen and (min-width: 64.063em) {
-      border:0;
-      background:#111;
-    }
-  }
-  .shop-details a:hover,
-  .header__close:hover,
-  .product__title a  {
-    color:#fff;
-  }
-  .product  {
-    border-bottom-color:#151515;
-  }
-  .product__img {
-    border:0;
-  }
-  .product__share   {
-    background:#333;
-    color:#ccc;
-  }
-  .product__brand,
-  .product__desc p,
-  .cirqle-slogan  {
-    color:#ccc;
-  }
-}
