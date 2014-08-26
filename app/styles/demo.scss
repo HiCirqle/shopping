@@ -9,8 +9,18 @@ html {
 }
 
 
+.iframe-hidden  {
+  display:none;
+}
+.iframe-show  {
+  display:block !important;
+}
+
 .demo   {
   margin:15px;
+  img   {
+    max-width:100%;
+  }
 }
 
 

@@ -39,10 +39,11 @@ html {
 }
 
 body {
+  background:rgba(#fff, .96);
   font:{family:sans-serif; weight:400;}
   color:#000;
   @media only screen and (min-width: 64.063em) {
-    background:#f9f9f9;
+    background:rgba(#f9f9f9, .96);
   }
 }
 
