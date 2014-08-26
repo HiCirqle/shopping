@@ -16,10 +16,28 @@ html {
   display:block !important;
 }
 
+body.iframe-show  {
+  overflow-y:hidden;
+}
+
 .demo   {
   margin:15px;
   img   {
     max-width:100%;
+  }
+}
+
+.cirqle-holder  {
+  display:inline-block; 
+  position:relative; 
+  z-index:50;
+  margin:0; padding:0;
+  overflow:hidden;
+  .cirqle-btn  {
+    transform:translate3d(0, 50px, 0);
+  }
+  &:hover .cirqle-btn   {
+    transform:translate3d(0, 0, 0);
   }
 }
 
@@ -46,10 +64,48 @@ html {
     span  {
       float:left;
       display:inline;
-      margin:2px 0 0 3px;
-      
+      margin:2px 15px 0 3px;
+      width:auto;
     }
     &:hover   {
-      width:215px;
+      width:auto;
+    }
+  }
+
+  .cirqle-btn--small  {
+    width:30px; height:30px;
+    line-height:30px;
+    svg   {
+      max-width:15px;
+      margin:0px 7px;
+    }
+    span  {
+      margin:1px 10px 0 0;
+    }
+  }
+
+  .cirqle-btn--wide {
+    width:auto;
+  }
+
+  .cirqle-btn--circle   {
+    border-radius:15px;
+  }
+
+  .cirqle-btn--round  {
+    border:1px #000 solid;
+    background:rgba(#000, .8);
+    padding:0 7px;
+    border-radius:2px;
+    line-height:30px;
+    &:active  {
+      background:rgba(#000, .9);
+      box-shadow:inset 0 1px 1px 0 rgba(#000, .9);
+    }
+    svg   {
+      margin:-1px 6px 0 6px;
+    }
+    span  {
+      margin:0;
     }
   }
