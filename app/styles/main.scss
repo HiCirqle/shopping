@@ -212,6 +212,10 @@ ol {
         padding-bottom:$flow;
         font:{size:16px;}
         color:$dark-grey;
+        @media only screen and (min-width: 64.063em) {
+          font:{size:14px;}
+          line-height:19px;
+        }
       }
     }
       // product title
@@ -272,6 +276,7 @@ ol {
       padding:($spacing--desktop * 2) 0 ($spacing--desktop * 5);
     }
   }
+    // footer cirqle logo
     .cirqle-logo  {
       float:left;
       font:{size:17px; weight:700;}
@@ -290,6 +295,7 @@ ol {
         }
       }
     }
+    // footer cirqle slogan
     .cirqle-slogan  {
       position:absolute;
       top:($spacing * 2) + 1px; left:$spacing * 6;
