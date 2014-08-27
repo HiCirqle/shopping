@@ -5,7 +5,7 @@
 // overall variables
 $primary: #4ab9a6;
 $blue: #49b3e9;
-$light-grey: #dedede;
+$light-grey: #ededed;
 $dark-grey: #333;
 
 $flow: 5px;
@@ -160,7 +160,7 @@ ol {
     .product__img {
       position:absolute;
       top:$spacing; left:0;
-      border:1px $light-grey solid;
+      border:1px #dedede solid;
       width:$product-img-size; height:$product-img-size;
       background-size:cover;
       background-position:center center;
@@ -174,16 +174,25 @@ ol {
     .product__share   {
       position:absolute;
       top:$product-img-size + $spacing; left:0;
-      margin-bottom:$spacing; padding:$flow;
+      border:1px #dedede solid;
+      border-top:0;
+      margin-bottom:$spacing;
       width:$product-img-size;
       background:$light-grey;
-      font:{size:11px;}
-      text:{align:center;}
+      background-image:linear-gradient(#fff, $light-grey);
+      font:{size:9px;}
+      text:{align:center; transform:uppercase;}
+      letter-spacing:1px;
       color:$dark-grey;
       border-radius:0 0 2px 2px;
       @media only screen and (min-width: 64.063em) {
         top:$product-img-size--desktop + $spacing--desktop; 
         width:$product-img-size--desktop;
+      }
+      a   {
+        display:block;
+        padding:$flow;
+        color:#000;
       }
       i {
         &:after {
@@ -194,10 +203,14 @@ ol {
         }
       }
       &:hover   {
+        background:lighten($light-grey, 3%);
         color:#000;
         i:after   {
           transform:translate3d(3px,0,0);
         }
+      }
+      &:active  {
+        background:darken($light-grey, 3%);
       }
     }
     // product description
@@ -277,7 +290,6 @@ ol {
     @media only screen and (min-width: 64.063em) {
       position:fixed;
       right:$spacing; bottom:$spacing;
-      //border:1px $light-grey solid;
       padding:$spacing;
       width:160px;
       background:#f2f2f2;
@@ -307,3 +319,51 @@ ol {
         font:{size:13px;}
       }
     }
+
+.product__share {
+  ul  {
+    position:relative;
+    li  {
+      position:relative;
+      ul  {
+        position:absolute;
+        top:$spacing + ($flow * 2); right:0; left:-1px;
+        z-index:2;
+        border:1px #dedede solid;
+        width:150px; 
+        background:#fff;
+        border-radius:3px;
+        box-shadow:0 1px 2px 0 rgba(#000, .1);
+        li  {
+          border-bottom:1px #dedede solid;
+          text:{align:left;}
+          &:last-child  {
+            border:0;
+          }
+          a   {
+            display:block;
+            padding:$spacing;
+            color:#000;
+            &:hover   {
+              background:#f9f9f9;
+            }
+          }
+        }
+        .clicker  {
+          position:relative;
+        }
+      }
+    }
+  }
+  // fallbacks
+  .no-js  {
+    ul  {
+      display:none;
+    }
+    &:hover ul  {
+      display:block;
+    }
+  }
+}
+
+

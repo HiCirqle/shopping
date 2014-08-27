@@ -36,7 +36,18 @@
     <div class="products">
       <div class="product">
         <div class="product__img" style="background-image:url(http://cdn-images.farfetch.com/10/65/88/89/10658889_3268842_800.jpg)"></div>
-        <a class="product__share" href="#">Share <i></i></a>
+        <div class="product__share">
+          <ul class="no-js">
+            <li>
+              <a href="#">Share</a>
+              <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Mail</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <div class="product__desc">
           <h3 class="product__title"><a href="#">TOM FORD 'Jared' sunglasses</a></h3>
           <h4 class="product__brand">Tom Ford</h4>
@@ -116,5 +127,25 @@
   <!-- build:js({app,.tmp}) scripts/main.js -->
    <script src="scripts/main.js"></script>
   <!-- endbuild -->
+
+  <script type="text/javascript">
+    $(function () {
+      $('.product__share > ul').toggleClass('no-js js');
+      $('.product__share .js ul').hide();
+      $('.product__share .js').click(function(e) {
+        $('.product__share .js ul').slideToggle(100);
+        $('.clicker').toggleClass('active');
+        e.stopPropagation();
+      });
+      $(document).click(function() {
+        if ($('.product__share .js ul').is(':visible')) {
+          $('.product__share .js ul', this).slideUp();
+          $('.clicker').removeClass('active');
+        }
+      });
+    });
+  </script>
+
+
 </body>
 </html>
