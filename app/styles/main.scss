@@ -132,7 +132,9 @@ ol {
 
 // products overview
 .products {
-
+  @media only screen and (min-width: 64.063em) {
+    padding-bottom:$spacing--desktop * 2;
+  }
 }
   // single product
   .product {
@@ -232,6 +234,9 @@ ol {
       right:0; bottom:$spacing; left:0;
       height:$spacing * 2;
       line-height:$spacing * 2;
+      @media only screen and (min-width: 40.063em) {
+        left:$product-img-size + $spacing;
+      }
       @media only screen and (min-width: 64.063em) {
         left:$product-img-size--desktop + $spacing--desktop;
       }
@@ -272,42 +277,27 @@ ol {
     @media only screen and (min-width: 64.063em) {
       position:fixed;
       right:$spacing; bottom:$spacing;
-      border:1px $light-grey solid;
-      border-bottom:1px #ccc solid;
+      //border:1px $light-grey solid;
       padding:$spacing;
       width:160px;
-      background:#fff;
-      background:linear-gradient(#fff, #f9f9f9);
+      background:#f2f2f2;
       border-radius:3px;
-      box-shadow:0 1px 3px 0 rgba(#000, .2);
     }
   }
     // footer cirqle logo
     .cirqle-logo  {
-      float:left;
-      font:{size:17px; weight:700;}
-      color:$primary;
+      width:80px; height:20px;
+      background-image:url(../images/cirqle-logo.svg);
+      background-size:contain;
+      background-repeat:no-repeat;
       @media only screen and (min-width: 64.063em) {
-        margin-bottom:$flow * 3;
-      }
-      i   {
-        display:inline-block;
-        position:relative;
-        top:1px;
-        border:2px $primary solid;
-        width:$spacing; height:$spacing;
-        border-radius:100%;
-        @media only screen and (min-width: 64.063em) {
-          top:3px;
-          margin-right:5px;
-          width:($spacing * 1.5); height:($spacing * 1.5);
-        }
+        margin-bottom:$flow * 2;
       }
     }
     // footer cirqle slogan
     .cirqle-slogan  {
       position:absolute;
-      top:($spacing * 2) + 1px; left:$spacing * 6;
+      top:($spacing * 2) + 3px; left:$spacing * 6;
       color:#000;
       @media only screen and (min-width: 64.063em) {
         float:left;
