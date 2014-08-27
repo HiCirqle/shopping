@@ -197,6 +197,49 @@ ol {
           background:darken($light-grey, 3%);
         }
       }
+      ul  {
+        position:relative;
+        li  {
+          position:relative;
+          ul  {
+            position:absolute;
+            top:$spacing + ($flow * 2); right:0; left:-1px;
+            z-index:2;
+            border:1px #dedede solid;
+            width:150px; 
+            background:#fff;
+            border-radius:3px;
+            box-shadow:0 1px 2px 0 rgba(#000, .1);
+            li  {
+              border-bottom:1px #dedede solid;
+              text:{align:left;}
+              &:last-child  {
+                border:0;
+              }
+              a   {
+                display:block;
+                padding:$spacing;
+                color:#000;
+                &:hover   {
+                  background:#f9f9f9;
+                }
+              }
+            }
+            .clicker  {
+              position:relative;
+            }
+          }
+        }
+      }
+      // fallbacks
+      .no-js  {
+        ul  {
+          display:none;
+        }
+        &:hover ul  {
+          display:block;
+        }
+      }
     }
     // product description
     .product__desc {
@@ -306,49 +349,7 @@ ol {
     }
 
 .product__share {
-  ul  {
-    position:relative;
-    li  {
-      position:relative;
-      ul  {
-        position:absolute;
-        top:$spacing + ($flow * 2); right:0; left:-1px;
-        z-index:2;
-        border:1px #dedede solid;
-        width:150px; 
-        background:#fff;
-        border-radius:3px;
-        box-shadow:0 1px 2px 0 rgba(#000, .1);
-        li  {
-          border-bottom:1px #dedede solid;
-          text:{align:left;}
-          &:last-child  {
-            border:0;
-          }
-          a   {
-            display:block;
-            padding:$spacing;
-            color:#000;
-            &:hover   {
-              background:#f9f9f9;
-            }
-          }
-        }
-        .clicker  {
-          position:relative;
-        }
-      }
-    }
-  }
-  // fallbacks
-  .no-js  {
-    ul  {
-      display:none;
-    }
-    &:hover ul  {
-      display:block;
-    }
-  }
+  
 }
 
 
