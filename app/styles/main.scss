@@ -150,11 +150,6 @@ ol {
       padding-bottom:$spacing--desktop * 2;
       min-height:($product-img-size--desktop * 2);
     }
-    &:last-child  {
-      @media only screen and (min-width: 64.063em) {
-        border:0;
-      }
-    }
   }
     // product avatar
     .product__img {
@@ -193,24 +188,14 @@ ol {
         display:block;
         padding:$flow;
         color:#000;
-      }
-      i {
-        &:after {
-          display:inline-block;
+        &:hover,
+        &.active   {
+          background:lighten($light-grey, 3%);
           color:#000;
-          content:'\2192';
-          transition:transform .3s ease;
         }
-      }
-      &:hover   {
-        background:lighten($light-grey, 3%);
-        color:#000;
-        i:after   {
-          transform:translate3d(3px,0,0);
+        &:active {
+          background:darken($light-grey, 3%);
         }
-      }
-      &:active  {
-        background:darken($light-grey, 3%);
       }
     }
     // product description
