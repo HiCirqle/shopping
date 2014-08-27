@@ -264,8 +264,9 @@ ol {
       // product brand
       .product__brand {
         margin-bottom:$flow;
-        font:{size:15px;}
+        font:{size:13px;}
         text:{transform:uppercase;}
+        letter-spacing:1px;
         color:$dark-grey;
       }
 
