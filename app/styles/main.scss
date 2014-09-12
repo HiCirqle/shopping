@@ -42,6 +42,9 @@ body {
   background:#fff;
   font:{family:sans-serif; size:15px; weight:400;}
   color:#000;
+  @media only screen and (min-width: 64.063em) {
+    background:rgba(#000, .8);
+  }
 }
 
 // paragraphs
@@ -61,10 +64,20 @@ ol {
   list-style:none;
 }
 
+.shopping-holder {
+  margin:0 auto;
+  max-width:660px;
+  @media only screen and (min-width: 64.063em) {
+    margin:15px auto;
+    background:#fff;
+    border-radius:3px;
+    box-shadow:0 0 3px 0 rgba(#000, .3);
+  }
+}
+
 // modal container
 .container {
-  margin:0 auto; padding:0 15px;
-  max-width:660px;
+  margin:0 auto; padding:0 $spacing; 
 }
 
   // modal header
