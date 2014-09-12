@@ -40,7 +40,7 @@ html {
 
 body {
   background:#fff;
-  font:{family:sans-serif; size:15px; weight:400;}
+  font:{family:'Source Sans Pro', sans-serif; size:15px; weight:400;}
   color:#000;
   @media only screen and (min-width: 40.063em) {
     background:rgba(#000, .8);
@@ -71,22 +71,23 @@ ol {
     margin:15px auto;
     background:#fff;
     border-radius:3px;
-    box-shadow:0 0 3px 0 rgba(#000, .3);
+    box-shadow:0 0 0 1px rgba(#000, .3), 0 0 3px 0 rgba(#000, .3);
   }
 }
 
 // modal container
 .container {
-  margin:0 auto; padding:0 $spacing; 
+  margin:0 auto; padding:0; 
 }
 
   // modal header
   .header {
     position:relative;
     border-bottom:1px $light-grey solid;
-    padding:$spacing 0;
+    padding:$spacing;
+    box-shadow:0 0 2px 0 rgba(#000, .1);
     @media only screen and (min-width: 64.063em) {
-      padding:$spacing--desktop 0;
+      padding:$spacing--desktop $spacing;
     }
     h1 {
       margin:0 ($spacing + $header-close) $flow 0;
@@ -95,12 +96,15 @@ ol {
         margin:0 ($spacing--desktop + $header-close--desktop) $flow 0;
         font:{size:19px;}
       }
+      strong {
+        font:{weight:600}
+      }
     }
   } 
     // shop details  
     .shop-details {
       padding-bottom:$spacing;
-      font:{size:15px;}
+      font:{family:Georgia, serif; size:15px; style:italic;}
       color:$dark-grey;
 
       li  {
@@ -112,7 +116,7 @@ ol {
       }
       a   {
         text:{decoration:underline;}
-        color:#aaa;
+        color:#333;
         &:hover   {
           color:#000;
         }
@@ -122,7 +126,7 @@ ol {
     .header__close {
       display:block;
       position:absolute;
-      top:$spacing; right:0;
+      top:$spacing; right:$spacing;
       width:$header-close; height:$header-close;
       //background:#000;
       font:{size:$header-close * 1.5;}
@@ -145,6 +149,7 @@ ol {
 
 // products overview
 .products {
+  padding:0 $spacing;
   @media only screen and (min-width: 64.063em) {
     padding-bottom:$spacing--desktop * 2;
   }
@@ -271,7 +276,7 @@ ol {
       .product__title a {
         display:block;
         margin-bottom:$flow;
-        font:{size:21px;}
+        font:{size:21px; weight:600}
         color:#000;
       }
       // product brand
@@ -300,6 +305,7 @@ ol {
       .product__price {
         float:left;
         margin-bottom:$flow;
+        font:{weight:600}
       }
 
       // buy product button
@@ -361,7 +367,7 @@ ol {
         display:block;
         position:relative;
         top:auto; left:auto;
-        font:{size:13px;}
+        font:{size:13px; weight:400}
       }
     }
 
