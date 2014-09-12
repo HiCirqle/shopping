@@ -37,6 +37,7 @@ $btn-color: #000;
     border-radius:$btn-size;
     -webkit-font-smoothing:antialiased;
     transition:all .3s ease;
+    box-sizing:content-box !important;
     i   {
       float:left;
       display:block;
@@ -44,18 +45,21 @@ $btn-color: #000;
       margin:($btn-size / 5) 0 0 ($btn-size / 5);
       width:$btn-size / 2; height:$btn-size / 2;
       border-radius:$btn-size / 2;
+      box-sizing:content-box !important;
     }
     svg {
       float:left;
       display:block;
       margin:6.5px 0 0 7px;
       width:18px; height:18px;
+      box-sizing:content-box !important;
     }
     span  {
       position:absolute;
       top:0.5px; // border top 1px 
       left:$btn-size;
       width:200px; // high width
+      box-sizing:content-box !important;
     }
     &:hover   {
       width:($btn-size * 2) + ($btn-size / 6);
