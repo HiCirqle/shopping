@@ -334,7 +334,7 @@ ol {
   // modal footer
   .footer   {
     position:relative;
-    padding:($spacing * 2) 0 ($spacing * 5);
+    padding:($spacing * 2) $spacing ($spacing * 5);
     @media only screen and (min-width: 40.063em) {
       padding-bottom:($spacing * 2);
     }
@@ -360,7 +360,7 @@ ol {
     // footer cirqle slogan
     .cirqle-slogan  {
       position:absolute;
-      top:($spacing * 2) + 2px; left:$spacing * 7;
+      top:($spacing * 2); left:$spacing * 8;
       color:#000;
       @media only screen and (min-width: 64.063em) {
         float:left;
