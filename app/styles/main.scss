@@ -42,7 +42,7 @@ body {
   background:#fff;
   font:{family:sans-serif; size:15px; weight:400;}
   color:#000;
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 40.063em) {
     background:rgba(#000, .8);
   }
 }
@@ -67,7 +67,7 @@ ol {
 .shopping-holder {
   margin:0 auto;
   max-width:660px;
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 40.063em) {
     margin:15px auto;
     background:#fff;
     border-radius:3px;
@@ -329,6 +329,9 @@ ol {
   .footer   {
     position:relative;
     padding:($spacing * 2) 0 ($spacing * 5);
+    @media only screen and (min-width: 40.063em) {
+      padding-bottom:($spacing * 2);
+    }
     @media only screen and (min-width: 64.063em) {
       position:fixed;
       right:$spacing; bottom:$spacing;
