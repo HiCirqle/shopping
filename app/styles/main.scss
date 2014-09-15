@@ -69,6 +69,7 @@ ol {
   max-width:660px;
   @media only screen and (min-width: 40.063em) {
     margin:15px auto;
+    overflow:hidden;
     background:#fff;
     border-radius:3px;
     box-shadow:0 0 0 1px rgba(#000, .3), 0 0 3px 0 rgba(#000, .3);
@@ -150,9 +151,6 @@ ol {
 // products overview
 .products {
   padding:0 $spacing;
-  @media only screen and (min-width: 64.063em) {
-    padding-bottom:$spacing--desktop * 2;
-  }
 }
   // single product
   .product {
@@ -167,6 +165,9 @@ ol {
       padding-left:$product-img-size--desktop + $spacing--desktop;
       padding-bottom:$spacing--desktop * 2;
       min-height:($product-img-size--desktop * 2);
+    }
+    &:last-child {
+      border:0;
     }
   }
     // product avatar
@@ -334,41 +335,25 @@ ol {
   // modal footer
   .footer   {
     position:relative;
+    border-top:1px $light-grey solid;
     padding:($spacing * 2) $spacing ($spacing * 5);
+    background:#f2f2f2;
     @media only screen and (min-width: 40.063em) {
       padding-bottom:($spacing * 2);
-    }
-    @media only screen and (min-width: 64.063em) {
-      position:fixed;
-      right:$spacing; bottom:$spacing;
-      padding:$spacing;
-      width:160px;
-      background:#f2f2f2;
-      border-radius:3px;
     }
   }
     // footer cirqle logo
     .cirqle-logo  {
-      width:90px; height:20px;
-      background-image:url(../images/cirqle-nl-logo.svg);
+      width:60px; height:60px;
+      background-image:url(../images/cirqle.svg);
       background-size:contain;
       background-repeat:no-repeat;
-      @media only screen and (min-width: 64.063em) {
-        margin-bottom:$flow * 2;
-      }
     }
     // footer cirqle slogan
     .cirqle-slogan  {
       position:absolute;
-      top:($spacing * 2); left:$spacing * 8;
+      top:($spacing * 3) + $flow; left:$spacing * 6;
       color:#000;
-      @media only screen and (min-width: 64.063em) {
-        float:left;
-        display:block;
-        position:relative;
-        top:auto; left:auto;
-        font:{size:13px; weight:400}
-      }
     }
 
 
