@@ -1,4 +1,5 @@
 @function contrastColor($color) {
+  @return #FDFDFD;
   @if (lightness( $color ) > 50) {
     @return #000; // Lighter color, return black
   }
@@ -18,7 +19,7 @@
 
 
 $btn-size: 30px;
-$btn-color: #713087;
+$btn-color: #5f9847;
 
   .cirqle-hover {
     width:$btn-size; // position button width fix
@@ -34,12 +35,13 @@ $btn-color: #713087;
     position:relative;
     border:1px darken($btn-color, 2%) solid;
     margin:0; padding:0;
-    width:64px; height:$btn-size;
+    width:77px; height:$btn-size;
     overflow:hidden;
     background:$btn-color;
     background:linear-gradient(lighten($btn-color, 10%), $btn-color);
     font:{family:sans-serif; size:12px; weight:bold;}
-    text:{shadow:0 -1px 0 rgba(#000, .5)}
+    // text:{shadow:0 -1px 0 rgba(#000, .5)}
+    text:{shadow:0px 0px 1px rgba(#000, 1)}
     line-height:$btn-size - 1px;
     color:contrastColor($btn-color);
     cursor:pointer;
@@ -48,13 +50,13 @@ $btn-color: #713087;
     -webkit-font-smoothing:antialiased;
     box-sizing:content-box !important;
     @media only screen and (min-width: 40.063em) {
-      width:129px; 
+      width:132px;
     }
   }
   .cirqle-btn-icon {
     float:left;
-    border-right:1px rgba(#000, .3) solid;
-    width:28px; height:$btn-size;
+    border-right:1px rgba(253, 253, 253, 0.8) solid;
+    width:30px; height:$btn-size;
     svg {
       float:left;
       display:block;
@@ -68,14 +70,18 @@ $btn-color: #713087;
   }
   .cirqle-btn-copy {
     position:absolute;
-    top:0.5px; // border top 1px 
-    left:$btn-size + 5px;
+    top:0.5px; // border top 1px
+    left:$btn-size+10;
     box-sizing:content-box !important;
+    // @media only screen and (min-width: 40.063em) {
+    //   left:$btn-size + 11px;
+    // }
   }
 
   .cirqle-btn:hover {
     background:lighten($btn-color, 13%);
-    background:linear-gradient(lighten($btn-color, 30%), lighten($btn-color, 13%));
+    background:linear-gradient(lighten($btn-color, 15%), lighten($btn-color, 3%));
+    // background:linear-gradient(lighten($btn-color, 20%), $btn-color);
   }
   .cirqle-btn:active {
     background:lighten($btn-color, 7%);
